@@ -38,7 +38,7 @@ def insert(intervals, newInterval):
         newInterval[end] = max(intervals[i][end], newInterval[end])
         i += 1
 
-        mergedIntervals.append(newInterval)
+    mergedIntervals.append(newInterval)
 
     while i < len(intervals):
         mergedIntervals.append(intervals[i])
@@ -48,6 +48,21 @@ def insert(intervals, newInterval):
     return mergedIntervals
 
 
-print(insert([[1,3], [5,7], [8,12]], [4,6]))
+def main():
+    print("Intervals after inserting the new interval: " + str(insert([[1, 3], [5, 7], [8, 12]], [4, 6])))
+    print("Intervals after inserting the new interval: " + str(insert([[1, 3], [5, 7], [8, 12]], [4, 10])))
+    print("Intervals after inserting the new interval: " + str(insert([[2, 3], [5, 7]], [1, 4])))
 
 
+main()
+
+
+# Time complexity#
+# As we are iterating through all the intervals only once, the time complexity of the above algorithm is O(N)
+# O(N)
+# , where ‘N’ is the total number of intervals.
+
+# Space complexity#
+# The space complexity of the above algorithm will be O(N)
+# O(N)
+#  as we need to return a list containing all the merged intervals.
