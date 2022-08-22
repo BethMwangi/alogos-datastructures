@@ -41,8 +41,50 @@ def main():
   print(cyclic_sort([3, 1, 5, 4, 2]))
   print(cyclic_sort([2, 6, 4, 3, 1, 5]))
   print(cyclic_sort([1, 5, 6, 4, 3, 2]))
+  print(cyclic_sort([2,3,1,8,2,3,5,1]))
+
+
+# main()
+
+
+# Problem Statement#
+# We are given an array containing n distinct numbers taken from the range 0 to n. Since the array has only n numbers out of the total n+1 numbers, find the missing number.
+
+# Example 1:
+
+# Input: [4, 0, 3, 1]
+# Output: 2
+# Example 2:
+
+# Input: [8, 3, 5, 2, 4, 6, 0, 1]
+# Output: 7
+
+
+
+def cyclic_sort_nums(nums):
+    
+    i = 0
+
+    while i < len(nums):
+        j = nums[i] 
+
+        if nums[i] != nums[j]:  #swap
+            nums[i], nums[j] = nums[j], nums[i]
+        
+        else:
+            i += 1
+    
+    return nums
+
+
+def main():
+    print(cyclic_sort([2,3,1,8,2,3,5,1]))
+
 
 
 main()
+
+
+
 
 
